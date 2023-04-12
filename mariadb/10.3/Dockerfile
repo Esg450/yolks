@@ -13,6 +13,7 @@ RUN         apt update -y \
 RUN 		sed -i "s/skip-name-resolve//" /etc/mysql/my.cnf
 RUN 		sed -i "s/skip-name-resolve//" /etc/mysql/mariadb.cnf
 RUN 		sed -i "s/skip-name-resolve//" /etc/mysql/debian.cnf
+RUN 		sed -i "s/skip-name-resolve//" /etc/mysql/mariadb.conf.d/05-skipcache.cnf
 
 USER        container
 ENV         USER=container HOME=/home/container
