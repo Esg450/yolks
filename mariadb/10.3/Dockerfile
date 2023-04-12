@@ -10,6 +10,7 @@ ENV         DEBIAN_FRONTEND noninteractive
 RUN         apt update -y \
             && apt install -y netcat \
             && useradd -d /home/container -m container -s /bin/bash
+RUN 		sed -i "s/skip-name-resolve//" /etc/mysql/my.cnf
 
 USER        container
 ENV         USER=container HOME=/home/container
