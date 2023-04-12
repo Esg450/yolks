@@ -11,6 +11,8 @@ RUN         apt update -y \
             && apt install -y netcat \
             && useradd -d /home/container -m container -s /bin/bash
 RUN 		sed -i "s/skip-name-resolve//" /etc/mysql/my.cnf
+RUN 		sed -i "s/skip-name-resolve//" /etc/mysql/mariadb.cnf
+RUN 		sed -i "s/skip-name-resolve//" /etc/mysql/debian.cnf
 
 USER        container
 ENV         USER=container HOME=/home/container
